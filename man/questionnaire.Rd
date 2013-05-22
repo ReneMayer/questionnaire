@@ -28,6 +28,8 @@ instruction.}
 }
 \examples{
 \dontrun{
+
+# construct a single answer scale
 scale.mapping <-
   list(scales = 'Accuracy',
        labels = list(c('_ _ Very _Inaccurate',
@@ -36,15 +38,29 @@ scale.mapping <-
                        '_ _Moderately _Accurate',
                        '_ _Very _Accurate') ),
        rev    = F )
-# big5 items retrieved from 'http://en.wikipedia.org/wiki/Big_Five_personality_traits'
- head(b5.items <- read.table(system.file("data/Big5.txt", package="questionnaire")))
-# mapping: items - scales; for the instruction see 'http://ipip.ori.org/New_IPIP-50-item-scale.htm'
+
+# big5 items from 'http://en.wikipedia.org/wiki/Big_Five_personality_traits'
+ b5.items<-data(Big5)
+
+# mapping: items - scales,
 item.mapping <- transform(b5.items, scales=factor(scales, levels=1, labels='Accuracy') )
+
+# build a questionnaire object with an instruction "Describe yourself as ..." from 'http://ipip.ori.org/New_IPIP-50-item-scale.htm'
 big5 <- questionnaire(
  name          = "big5",
  scale.mapping = scale.mapping,
  item.mapping  = item.mapping,
- instruction   = "Describe yourself as you generally are now..." )
+ instruction   = "Describe yourself as you generally are now..."
+)
+
+# display all items an response scales on the screen
+responses<-launch(qstnr = big5)
+
+# if finished get the answers
+get.answers(responses)
+
+# next steps you may want to take see: ?profile, ?plot.profile
+
 }
 }
 
