@@ -1,0 +1,13 @@
+
+S3method(print, questionnaire)
+S3method(plot, profile)
+export(launch,
+       questionnaire,
+       get.answers,
+       make.questions,
+       make.scale,
+       profile)
+import(rJava)
+import(lattice)
+import(plyr)
+import(XML)

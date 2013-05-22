@@ -1,0 +1,47 @@
+#' plots a profile: mean answers given by person and reference population mean +- SD
+#'
+#' If a circle of radius \eqn{R} is inscribed inside ...
+#'
+#' @param x object of class profile
+#' @param order c('norm', 'answer', NA ) should the mean anser ordered according to reference norm or answer given by person or in the order of the key.
+#' @return S3 \code{mcpi} object; a list consisting of
+#' @examples 
+#' \dontrun{ 
+#' norm<-read.table(system.file("data/ExampleNorm.txt", package="questionnaire"))
+#' answers<-read.table(system.file("data/ExampleAnswers.txt", package="questionnaire"))
+#' key<-read.table(system.file("data/ExampleKey.txt", package="questionnaire"))
+#' ppp<-profile(norm, answers, key)
+#' plot(ppp, NA)
+#' plot(ppp, 'norm')
+#}
+plot.profile <-
+function(x, order='norm', ...){
+  dd<-x$profileDF
+  if (is.na(order)) {
+    dd.n=dd
+    f<-scale~answer
+    } else {
+	if (order=='norm') {
+	  # ordering according to mean answer or mean norm
+	  o <- order(dd$answer)
+	  dd.n<-dd[o,]
+	  f<-reorder(scale, answer)~answer
+	} else { # ordering answerccording to meanswern norm
+	  o <- order(dd$middle)
+	  dd.n<-dd[o,] 
+	  f<-reorder(scale, middle)~answer
+	}
+  }
+
+  xyplot(f,data=dd.n, type='o', xlim=c(0,6), subscripts=T,
+       panel = function(x, y, subscripts, ...){
+            # SDs 
+	    with(dd.n, 
+	      panel.polygon( c( upper[subscripts], rev(lower[subscripts]) ), c(y[subscripts],rev(y[subscripts]) ), col='gray', border=F) )
+	    # Proband
+            panel.xyplot(x[subscripts], y[subscripts], col='red',...)
+            # mean
+	    with(dd.n,panel.xyplot(middle[subscripts],y[subscripts], type='l',col='darkgray',))
+	    
+       })
+}

@@ -1,0 +1,66 @@
+#' aggregates answers recorded during lauch() according to a key (item to construct mapping). If a norm is provided the mean answers 
+#' will be compared against this norm. Reversed items can be marked with the flip argument
+#'
+#' @param norm a data frame containing T-scores for each construct
+#' @param answers answers recorded during lauch()  
+#' @param key a data.frame with items and constructs (scales)
+#' @param flip reverses answer by mirroring it on the mean of the anwer-scale
+#' @return S3 \code{profile} object; a list consisting of ...
+#'
+#' @example 
+#' \dontrun{
+#' see ?plot.questionnaire
+#}
+
+
+profile <-
+function(norm=NA, answers=NA, key=NA, flip=NA) {
+    # extract from norms: lower - middle - upper bounds given a T-distribution T = Normal(mean=50, sd=10)
+    # ... write a switch later on for Z instead of T ...
+    
+    ## means rating and SD'S by norms
+    
+    # rename norm data.frame and variables
+    d<-norm; names(d)<-c('t','rating', 'item')
+    
+    
+    # local functions
+    get.bands=function(x){
+	    m=lm(x$rating~x$t)
+	    # predict points around T=50 with 1 sd=10  
+	    # 
+	    #       |1 40|   
+	    # LMU = |1 50| x |b0 b1|
+	    #       |1 60|
+	    b=matrix(data=c(1,1,1,40,50,60), byrow=F, ncol=2)%*%coef(m)
+	    return(t(b))
+	  }
+	  
+     mirror<-function(labels, item){length(labels)+1 - item}
+
+	  
+    #library(plyr)	  
+    bands <- ddply(d,'item',get.bands)
+    names(bands)=c('scale','lower','middle','upper')
+	  
+    ## mean rating from current questionnaire 
+	  
+    # aggregate an answers according to key: scale  question
+    #                                        scaleA item1 
+    #					     scaleA item2 
+    #                                        scaleB item4
+    #                                        scaleB item5
+    if (any(!is.na(flip)))  answers[flip]<-mirror(answers[flip])
+    answers.key <- merge(answers, key, by='question')
+    a <- aggregate(answer~scale, answers.key, mean)
+    profileDF <- merge(bands, a , by = 'scale')
+    # give back an object of type profile
+    # class of 'profile'   
+    profile <- list() 
+    class(profile) <- "profile"
+    profile$profileDF <- profileDF
+    profile$norm <- norm
+    profile$answers <- answers
+    profile$mirror <- mirror
+    return(profile)
+}
