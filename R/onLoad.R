@@ -3,22 +3,9 @@
 
     pathToSdk <- paste(system.file(package = "questionnaire") ,sep="")
     
-    jarPaths <- c(paste(pathToSdk, "/lib/jcalendar-1.4.jar", sep=""),
-		  paste(pathToSdk, "/lib/jdom.jar", sep=""),
-		  paste(pathToSdk, "/lib/opencsv-2.3.jar", sep=""),
-                  paste(pathToSdk, "/SurveyLib.jar", sep="")
-                )
+    jarPaths <- c( paste(pathToSdk, "/Survey.jar", sep="") )
     .jpackage(pkg, morePaths=jarPaths)
     # to add?
     attach( javaImport( c("java.lang", "java.io")))
     packageStartupMessage( paste( "questionnaire loaded. The classpath is: ", paste(.jclassPath(), collapse=" " ) ) )        
-
-    
-#     if (Sys.getenv("AWSACCESSKEY") != "" && Sys.getenv("AWSSECRETKEY") != ""){
-#       awsCreds <- new(com.amazonaws.auth.BasicAWSCredentials, Sys.getenv("AWSACCESSKEY"), Sys.getenv("AWSSECRETKEY"))
-#       assign("awsCreds", awsCreds, envir = .GlobalEnv)
-#       packageStartupMessage( "Segue has loaded your AWS Credentials." )
-#     } else {
-#        packageStartupMessage( "Segue did not find your AWS credentials. Please run the setCredentials() function." )
-#     }
 }

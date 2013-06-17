@@ -14,6 +14,6 @@ Author: Rene Mayer and Benjamin Zarriess
 Maintainer: <mayer@psychologie.tu-dresden.de>
 Description: Displays items (questions) with answer scales (e.g., liker scale), 
   records the responses, plots results accordings to norms (if provided).
-License: GPL
+License: GPL (>= 2) 
 Depends: R (>= 2.11), rJava, XML, lattice, plyr
 LazyLoad: yes

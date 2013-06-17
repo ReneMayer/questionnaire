@@ -40,7 +40,8 @@ scale.mapping <-
        rev    = F )
 
 # big5 items from 'http://en.wikipedia.org/wiki/Big_Five_personality_traits'
- b5.items<-data(Big5)
+data(Big5)
+b5.items<-Big5
 
 # mapping: items - scales,
 item.mapping <- transform(b5.items, scales=factor(scales, levels=1, labels='Accuracy') )
@@ -59,7 +60,7 @@ responses<-launch(qstnr = big5)
 # if finished get the answers
 get.answers(responses)
 
-# next steps you may want to take see: ?profile, ?plot.profile
+# next steps you may want to take
 
 }
 }

@@ -8,8 +8,6 @@ from a questionnaire object}
 }
 \arguments{
   \item{qstnr}{object of class questionnaire}
-
-  \item{verbose}{Print information during execution}
 }
 \value{
   S3 \code{rJava} object; a list consisting of ...

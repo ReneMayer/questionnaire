@@ -3,11 +3,7 @@
 #'
 #'
 #' @param qstnr object of class questionnaire
-#' @param verbose Print information during execution
 #' @return S3 \code{rJava} object; a list consisting of ...
-#'
-#' @example # responses <- launch(qstnr = big5) # the create the big5 object see ?questionnaire
-#   # get.answers(responses)
 launch <-
 function(subject.id='id01', session.id='01', subject.group='PILOT', qstnr='test'){
     
@@ -23,6 +19,7 @@ function(subject.id='id01', session.id='01', subject.group='PILOT', qstnr='test'
     q.factory <- .jnew('survey.QuestionnaireFactory',session)
     questionnaire <- q.factory$getQuestionnaire( paste(qstnr$name,'xml', sep='.') )
     # ... now we can get rid of the '*.xml' - or save if if needed
+    file.remove( paste(qstnr$name,'xml', sep='.') )
     q.frame <- .jnew('survey.QFrame',questionnaire)
     q.frame$setVisible(TRUE)
     return(q.frame)

@@ -7,12 +7,28 @@
 #' @return S3 \code{mcpi} object; a list consisting of
 #' @examples 
 #' \dontrun{ 
-#' norm<-read.table(system.file("data/ExampleNorm.txt", package="questionnaire"))
-#' answers<-read.table(system.file("data/ExampleAnswers.txt", package="questionnaire"))
-#' key<-read.table(system.file("data/ExampleKey.txt", package="questionnaire"))
-#' ppp<-profile(norm, answers, key)
+#' # simulated Norms from 23 scales (constructs) each manifested by 5 items (questions)
+#' data(eNorm)
+#' head(eNorm)
+#'
+#' # simulated answers
+#' data(eAnswers)
+#' head(eAnswers)
+#' 
+#' # an example key: mapping answers to scales
+#' data(eKey)
+#' head(eKey)
+#' 
+#' # make an object of type profile
+#' ppp<-
+#'   profile( norm    = eNorm, 
+#'            answers = eAnswers, 
+#'            key     = eKey
+#'   )
+#'   
 #' plot(ppp, NA)
 #' plot(ppp, 'norm')
+#' plot(ppp, 'answer')
 #' }
 plot.profile <-
 function(x, order='norm', ...){
