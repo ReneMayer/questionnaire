@@ -1,0 +1,62 @@
+<questionnaire >
+  <answerscale id="Accuracy">
+    <answer id="1">_ _ Very _Inaccurate</answer>
+    <answer id="2">_ _Moderately _Inaccurate</answer>
+    <answer id="3">Neither _Accurate _Nor _Inaccurate</answer>
+    <answer id="4">_ _Moderately _Accurate</answer>
+    <answer id="5">_ _Very _Accurate</answer>
+  </answerscale>
+  <page>
+    <instruction>Describe yourself as you generally are now...</instruction>
+    <question id="big5_1" type="mc_horizontal" answers="Accuracy" text="I have a rich vocabulary."/>
+    <question id="big5_2" type="mc_horizontal" answers="Accuracy" text="I have a vivid imagination."/>
+    <question id="big5_3" type="mc_horizontal" answers="Accuracy" text="I have excellent ideas."/>
+    <question id="big5_4" type="mc_horizontal" answers="Accuracy" text="I am quick to understand things."/>
+    <question id="big5_5" type="mc_horizontal" answers="Accuracy" text="I use difficult words."/>
+    <question id="big5_6" type="mc_horizontal" answers="Accuracy" text="I spend time reflecting on things."/>
+    <question id="big5_7" type="mc_horizontal" answers="Accuracy" text="I am full of ideas."/>
+    <question id="big5_8" type="mc_horizontal" answers="Accuracy" text="I am not interested in abstractions. "/>
+    <question id="big5_9" type="mc_horizontal" answers="Accuracy" text="I do not have a good imagination. "/>
+    <question id="big5_10" type="mc_horizontal" answers="Accuracy" text="I have difficulty understanding abstract ideas. "/>
+    <question id="big5_11" type="mc_horizontal" answers="Accuracy" text="I am always prepared."/>
+    <question id="big5_12" type="mc_horizontal" answers="Accuracy" text="I pay attention to details."/>
+    <question id="big5_13" type="mc_horizontal" answers="Accuracy" text="I get chores done right away."/>
+    <question id="big5_14" type="mc_horizontal" answers="Accuracy" text="I like order."/>
+    <question id="big5_15" type="mc_horizontal" answers="Accuracy" text="I follow a schedule."/>
+    <question id="big5_16" type="mc_horizontal" answers="Accuracy" text="I am exacting in my work."/>
+    <question id="big5_17" type="mc_horizontal" answers="Accuracy" text="I leave my belongings around. "/>
+    <question id="big5_18" type="mc_horizontal" answers="Accuracy" text="I make a mess of things. "/>
+    <question id="big5_19" type="mc_horizontal" answers="Accuracy" text="I often forget to put things back in their proper place. "/>
+    <question id="big5_20" type="mc_horizontal" answers="Accuracy" text="I shirk my duties. "/>
+    <question id="big5_21" type="mc_horizontal" answers="Accuracy" text="I am the life of the party."/>
+    <question id="big5_22" type="mc_horizontal" answers="Accuracy" text="I don't mind being the center of attention."/>
+    <question id="big5_23" type="mc_horizontal" answers="Accuracy" text="I feel comfortable around people."/>
+    <question id="big5_24" type="mc_horizontal" answers="Accuracy" text="I start conversations."/>
+    <question id="big5_25" type="mc_horizontal" answers="Accuracy" text="I talk to a lot of different people at parties."/>
+    <question id="big5_26" type="mc_horizontal" answers="Accuracy" text="I don't talk a lot. "/>
+    <question id="big5_27" type="mc_horizontal" answers="Accuracy" text="I keep in the background. "/>
+    <question id="big5_28" type="mc_horizontal" answers="Accuracy" text="I have little to say. "/>
+    <question id="big5_29" type="mc_horizontal" answers="Accuracy" text="I don't like to draw attention to myself. "/>
+    <question id="big5_30" type="mc_horizontal" answers="Accuracy" text="I am quiet around strangers. "/>
+    <question id="big5_31" type="mc_horizontal" answers="Accuracy" text="I am interested in people."/>
+    <question id="big5_32" type="mc_horizontal" answers="Accuracy" text="I sympathize with others' feelings."/>
+    <question id="big5_33" type="mc_horizontal" answers="Accuracy" text="I have a soft heart."/>
+    <question id="big5_34" type="mc_horizontal" answers="Accuracy" text="I take time out for others."/>
+    <question id="big5_35" type="mc_horizontal" answers="Accuracy" text="I feel others' emotions."/>
+    <question id="big5_36" type="mc_horizontal" answers="Accuracy" text="I make people feel at ease."/>
+    <question id="big5_37" type="mc_horizontal" answers="Accuracy" text="I am not really interested in others. "/>
+    <question id="big5_38" type="mc_horizontal" answers="Accuracy" text="I insult people. "/>
+    <question id="big5_39" type="mc_horizontal" answers="Accuracy" text="I am not interested in other people's problems. "/>
+    <question id="big5_40" type="mc_horizontal" answers="Accuracy" text="I feel little concern for others. "/>
+    <question id="big5_41" type="mc_horizontal" answers="Accuracy" text="I am easily disturbed."/>
+    <question id="big5_42" type="mc_horizontal" answers="Accuracy" text="I change my mood a lot."/>
+    <question id="big5_43" type="mc_horizontal" answers="Accuracy" text="I get irritated easily."/>
+    <question id="big5_44" type="mc_horizontal" answers="Accuracy" text="I get stressed out easily."/>
+    <question id="big5_45" type="mc_horizontal" answers="Accuracy" text="I get upset easily."/>
+    <question id="big5_46" type="mc_horizontal" answers="Accuracy" text="I have frequent mood swings."/>
+    <question id="big5_47" type="mc_horizontal" answers="Accuracy" text="I often feel blue."/>
+    <question id="big5_48" type="mc_horizontal" answers="Accuracy" text="I worry about things."/>
+    <question id="big5_49" type="mc_horizontal" answers="Accuracy" text="I am relaxed most of the time. "/>
+    <question id="big5_50" type="mc_horizontal" answers="Accuracy" text="I seldom feel blue."/>
+  </page>
+</questionnaire >
