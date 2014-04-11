@@ -30,18 +30,18 @@
 #' plot(ppp, 'norm')
 #' plot(ppp, 'answer')
 #' }
-plot.profile <-
-function(x, order='norm', ...){
+plot.profile<-function(x, order='norm', ...){
   dd<-x$profileDF
   if (is.na(order)) {
-    dd.n=dd
-    f<-scale~answer
+     o    <- order(dd$scale)
+     dd.n <- dd[o,]
+     f    <- scale~answer
     } else {
 	if (order=='norm') {
 	  # ordering according to mean answer or mean norm
-	  o <- order(dd$answer)
+	  o <- order(dd$answer, dd$middle)
 	  dd.n<-dd[o,]
-	  f<-reorder(scale, answer)~answer
+	  f<-reorder(reorder(scale,  middle ),answer)~answer
 	} else { # ordering answerccording to meanswern norm
 	  o <- order(dd$middle)
 	  dd.n<-dd[o,] 
@@ -49,7 +49,12 @@ function(x, order='norm', ...){
 	}
   }
 
-  xyplot(f,data=dd.n, type='o', xlim=c(0,6), subscripts=T,
+  xyplot(f,data=dd.n, 
+          type=c('o'),  
+          xlim=c(as.numeric(x$labels[1]), as.numeric(x$labels[length(x$labels)])),
+          subscripts=T,
+          xlab = 'mean answer',
+          ylab = 'scale - construct',
        panel = function(x, y, subscripts, ...){
             # SDs 
 	    with(dd.n, 
@@ -57,7 +62,9 @@ function(x, order='norm', ...){
 	    # Proband
             panel.xyplot(x[subscripts], y[subscripts], col='red',...)
             # mean
-	    with(dd.n,panel.xyplot(middle[subscripts],y[subscripts], type='l',col='darkgray',))
+	    with(dd.n,panel.xyplot(middle[subscripts],y[subscripts], type='l',col='black',))
+	    panel.grid(h=-length(levels(dd$scale)),v=-1,...)
 	    
        })
 }
+

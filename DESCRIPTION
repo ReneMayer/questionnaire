@@ -3,17 +3,22 @@ Type: Package
 Title: launch computer based questionnaire
 Version: 1.0
 Date: 2013-05-15
-Authors@R: c(person("Rene", "Mayer", 
-                     role = c("aut", "cre"), 
-                     email = "mayer@psychologie.tu-dresden.de"),
-             person("Benjamin", "Zarriess", 
-                     role = "aut", 
-                     email = "benjamin.zarriess@inf.tu-dresden.de")
-            )
-Author: Rene Mayer and Benjamin Zarriess           
+Authors@R: c(person("Rene", "Mayer",
+    role = c("aut", "cre"),
+    email = "mayer@psychologie.tu-dresden.de"),
+    person("Benjamin", "Zarriess",
+    role = "aut",
+    email = "benjamin.zarriess@inf.tu-dresden.de")
+    )
+Author: Rene Mayer and Benjamin Zarriess
 Maintainer: <mayer@psychologie.tu-dresden.de>
-Description: Displays items (questions) with answer scales (e.g., liker scale), 
-  records the responses, plots results accordings to norms (if provided).
-License: GPL (>= 2) 
-Depends: R (>= 2.11), rJava, XML, lattice, plyr
+Description: Displays items (questions) with answer scales (e.g., liker scale),
+    records the responses, plots results accordings to norms (if provided).
+License: GPL (>= 2)
+Depends:
+    R (>= 2.11),
+    rJava,
+    XML,
+    lattice,
+    plyr
 LazyLoad: yes

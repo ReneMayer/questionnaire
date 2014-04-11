@@ -2,8 +2,7 @@
 \alias{make.scale}
 \title{makes an xml nodes for the answer-scales}
 \usage{
-  make.scale(scale, labels, reversed = F, scalenumber = 1,
-    questionnaire)
+make.scale(scale, labels, reversed = F, scalenumber = 1, questionnaire)
 }
 \arguments{
   \item{scale}{}
@@ -17,9 +16,9 @@
   \item{questionnaire}{}
 }
 \value{
-  S3 \code{XML} object
+S3 \code{XML} object
 }
 \description{
-  makes an xml nodes for the answer-scales
+makes an xml nodes for the answer-scales
 }
 

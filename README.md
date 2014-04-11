@@ -1,6 +1,6 @@
 # questionnaire
 
-The (under development) R package **questionnaire** is aims to display, record and plot simple computer based questionnaires. While it operates within R the rendering engine is written in JAVA. The lightweight R function calls are designed to give users control of the way questions are displayed on the screen. Questions and the answers are processed internally by making use of the extended markup language (XML). If norms are aviable and the items are mapped onto constructs according to a key, a profile get be plotted to see which constructs are rated under or above mean rating above or under SD.  
+The (under development) R package **questionnaire** is aims to display, record and plot simple computer based questionnaires. While it operates within R the rendering engine is written in JAVA. The lightweight R function calls are designed to give users control of the way questions are displayed on the screen. Questions and the answers are processed internally by making use of the extended markup language (XML). If items can be mapped onto constructs (for example the first five items aim to ask the same construct under different perspectives) mean ratings per construct can be computed. This is often called a profile. To see which responses on the construct level are under or above mean rating within SD a profile.plot is aviable. In diagnostics this is often used can contrast mean response in a population with the individual response.    
 
 ## Installation
 

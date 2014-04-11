@@ -2,7 +2,7 @@
 \alias{plot.profile}
 \title{plots a profile: mean answers given by person and reference population mean +- SD}
 \usage{
-  plot.profile(x, order = "norm", ...)
+\method{plot}{profile}(x, order = "norm", ...)
 }
 \arguments{
   \item{x}{object of class profile}
@@ -12,10 +12,10 @@
   by person or in the order of the key.}
 }
 \value{
-  S3 \code{mcpi} object; a list consisting of
+S3 \code{mcpi} object; a list consisting of
 }
 \description{
-  If a circle of radius \eqn{R} is inscribed inside ...
+If a circle of radius \eqn{R} is inscribed inside ...
 }
 \examples{
 \dontrun{

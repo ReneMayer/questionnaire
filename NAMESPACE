@@ -6,7 +6,8 @@ export(launch,
        get.answers,
        make.questions,
        make.scale,
-       profile)
+       profile,
+       feed)
 import(rJava)
 import(lattice)
 import(plyr)

@@ -2,8 +2,8 @@
 \alias{make.questions}
 \title{makes an xml nodes for the questions}
 \usage{
-  make.questions(id, type = rep("mc_horizontal", 3),
-    answers, text, questionnaire)
+make.questions(id, type = rep("mc_horizontal", 3), answers, text,
+  questionnaire)
 }
 \arguments{
   \item{id}{numbering of items. The values in \code{x} are
@@ -18,9 +18,9 @@
   \item{questionnaire}{where to append}
 }
 \value{
-  S3 \code{XML} object
+S3 \code{XML} object
 }
 \description{
-  makes an xml nodes for the questions
+makes an xml nodes for the questions
 }
 

@@ -4,8 +4,7 @@
 according to items (questions beeing asked) scale type (answers beeing given: likert, yes-no) and
 instruction.}
 \usage{
-  questionnaire(name, scale.mapping, item.mapping,
-    instruction)
+questionnaire(name, scale.mapping, item.mapping, instruction)
 }
 \arguments{
   \item{name}{internal name of the questionnaire}
@@ -19,12 +18,12 @@ instruction.}
   \item{instruction}{the instruction given infront.}
 }
 \value{
-  S3 \code{questionnaire} object; a list consisting
+S3 \code{questionnaire} object; a list consisting
 }
 \description{
-  Builds an internal representation of a questionnaire
-  according to items (questions beeing asked) scale type
-  (answers beeing given: likert, yes-no) and instruction.
+Builds an internal representation of a questionnaire
+according to items (questions beeing asked) scale type
+(answers beeing given: likert, yes-no) and instruction.
 }
 \examples{
 \dontrun{
